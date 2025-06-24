@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  engine:
+    build:
+      context: ./Inspectra-Engine
+    image: inspectra-engine:1.0.0
+    container_name: engine
+    ports:
+      - "3000:3000"
+    networks:
+      - inspectra-net
+
+  dashboard:
+    build:
+      context: ./Inspectra-Dashboard
+    image: inspectra-dashboard:1.0.0
+    container_name: dashboard
+    ports:
+      - "8888:8888"  # External 8888 mapped to internal 3000
+    networks:
+      - inspectra-net
+    depends_on:
+      - engine
+    environment:
+      - BACKEND_URL=http://engine:3000
+
+networks:
+  inspectra-net:
+    driver: bridge
+
