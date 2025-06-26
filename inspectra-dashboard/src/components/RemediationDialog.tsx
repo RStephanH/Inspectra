@@ -28,7 +28,7 @@ interface RemediationState {
 
 async function getRemediationSteps(description: string, domain: string): Promise<RemediationState> {
   try {
-    const response = await fetch('http://localhost:3000/remediation-steps', {
+    const response = await fetch('http://engine:3000/remediation-steps', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ description, domain }),
