@@ -3,7 +3,7 @@ version: '3.9'
 services:
   engine:
     build:
-      context: ./Inspectra-Engine
+      context: ./inspectra-engine
     image: inspectra-engine:1.0.0
     container_name: engine
     ports:
@@ -13,7 +13,7 @@ services:
 
   dashboard:
     build:
-      context: ./Inspectra-Dashboard
+      context: ./inspectra-dashboard
     image: inspectra-dashboard:1.0.0
     container_name: dashboard
     ports:
