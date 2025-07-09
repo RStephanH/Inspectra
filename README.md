@@ -37,7 +37,7 @@ To get started with Inspectra, follow these steps:
 3. **Build and Run the Application**:
    Use Docker Compose to build and run the application. In the root directory of the project, execute the following command:
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 
 4. **Access the Application**:
@@ -52,7 +52,7 @@ To get started with Inspectra, follow these steps:
 
 To stop the running services, press `CTRL + C` in the terminal where Docker Compose is running. You can also run the following command to stop and remove the containers:
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ## Contributing
